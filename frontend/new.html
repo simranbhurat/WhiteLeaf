@@ -49,19 +49,19 @@
         <div class="col-7">
           <div class="container">
             <div class="row">
-              <div class="col-2">
+              <div class="col-1">
                 <label for="product_name">Name</label>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid product name is required.
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="product_id">Id/Code</label>
               </div>
-              <div class="col-4">
+              <div class="col-5">
                 <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid id is required.
@@ -70,34 +70,40 @@
             </div>
 
             <div class="row">
-              <div class="col-2">
+              <div class="col-1">
                 <label for="Brand">Brand</label>
               </div>
-              <div class="col-4">
+              <div class="col-3">
                 <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="category">Category</label>
               </div>
-              <div class="col-4">
+              <div class="col-3">
                 <input type="text" class="form-control" id="category" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-2">
+              <div class="col-1">
                 <label for="quantity">Quantity</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" class="form-control" id="quantity" placeholder="" required>
                 <div class="invalid-feedback">
                   Quantity required
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="color">Color</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" class="form-control" id="color" placeholder="" value="" required>
               </div>
               <div class="col-4">
@@ -107,45 +113,43 @@
             </div>
 
             <div class="row">
-              <div class="col-2">
+              <div class="col-1">
                 <label for="size">Size</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" style="width:80px;" type="text" class="form-control" id="size" placeholder=""
                   value="" required>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="unit">Unit</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
                   value="" required>
               </div>
-              <div class="col-2">
-                <label for="size">Size</label>
-              </div>
-              <div class="col-2">
-                <label for="size">Size</label>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
               </div>
             </div>
 
             <div class="row">
-              <div class="col-2">
+              <div class="col-1">
                 <label for="mrp">M.R.P</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="bp">Best Price</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
               </div>
-              <div class="col-2">
+              <div class="col-1">
                 <label for="discount">Discount</label>
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
                   required>
               </div>
@@ -178,7 +182,7 @@
           </div>
         </div>
 
-        <div class="col-2" >
+        <div class="col-2">
           <div id="show_uploaded_images" style="text-align: center; display: none;">
             <p style="align-self: center;">Selected Images</p>
             <div id="image_list_div">
@@ -190,7 +194,7 @@
   </div>
   </form>
   </div>
- 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
 
