@@ -23,7 +23,7 @@ def create_user():
         phone = req_data.get("phone")
         location = '{}'.format(req_data.get("location"))
         r0 = request.post(
-            url="http://localhost:6000/api/v1/db/read",
+            url="http://3.129.56.173:6000/api/v1/db/read",
             json={
                 "table":"users",
                 "columns":["email_id"]
@@ -42,7 +42,7 @@ def create_user():
             
         else:
             r1 = request.post(
-                url="http://localhost:6000/api/v1/db/write",
+                url="http://3.129.56.173:6000/api/v1/db/write",
                 json={
                     "insert":{
                         "user_name":name,
@@ -95,7 +95,7 @@ def create_retailer():
         # "where" : "["<col_name = 'value'>", ...]
         # }
         r0 = request.post(
-            url="http://localhost:6000/api/v1/db/read",
+            url="http://3.129.56.173:6000/api/v1/db/read",
             json={
                 "table":"users",
                 "columns":["email_id"]
@@ -112,7 +112,7 @@ def create_retailer():
         
         else:
             r1 = request.post(
-                url="http://localhost:6000/api/v1/db/write",
+                url="http://3.129.56.173:6000/api/v1/db/write",
                 json={
                     "insert":{
                         "registered":registered,

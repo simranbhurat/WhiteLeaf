@@ -131,6 +131,14 @@ def writeToDB():
                     result = {}
                     result["status"] = 401
                     return json.dumps(result)
+            except Exception as err:
+                print(err)
+                return Response(status=400)
+            # Finally close the connection
+            finally:
+                if connection:
+                    cursor.close()
+                    connection.close()
 
         if update == "1":
 
@@ -180,6 +188,14 @@ def writeToDB():
                     result = {}
                     result["status"] = 401
                     return json.dumps(result)
+            except Exception as err:
+                print(err)
+                return Response(status=400)
+            # Finally close the connection
+            finally:
+                if connection:
+                    cursor.close()
+                    connection.close()
 
 
 @app.route("/api/v1/db/read", methods=['GET'])
@@ -348,6 +364,14 @@ def readFromDB():
 
                 cursor.close()
                 return json.dumps(result, default=str)
+        except Exception as err:
+                print(err)
+                return Response(status=400)
+            # Finally close the connection
+        finally:
+            if connection:
+                cursor.close()
+                connection.close()
 
 
 if __name__ == '__main__':

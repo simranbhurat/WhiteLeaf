@@ -40,7 +40,7 @@
                 }
                 console.log(jsonObject);
 
-                XHROb.open("PUT", "http://localhost:5000/api/v1/user/create");
+                XHROb.open("PUT", "http://3.128.23.111:5000/api/v1/user/create");
                 XHROb.setRequestHeader('Content-type', 'application/json');
                 XHROb.send(JSON.stringify(jsonObject), true);
             }
@@ -65,7 +65,7 @@
             var x = document.getElementById("demo");
             x.innerHTML = "Latitude: " + position.coords.latitude +
                 "<br>Longitude: " + position.coords.longitude;
-            locationString = (position.coords.latitude).toString() + (position.coords.longitude).toString();
+            locationString = (position.coords.latitude).toString() +" "+(position.coords.longitude).toString();
         }
     </script>
     <script>
