@@ -1,6 +1,8 @@
 import psycopg2
 from psycopg2 import sql
 from flask import Flask, Response, jsonify, request, json
+from flask_cors import CORS
+import requests
 
 POSTGRES_USER = "postgres"
 POSTGRES_PASSWD = "leaf8970"
@@ -10,6 +12,7 @@ connection = 1
 
 # Creating a flask instance
 app = Flask(__name__) 
+CORS(app)
 
 # Create user API 
 @app.route('/api/v1/user/create', methods=['PUT'])
@@ -22,7 +25,7 @@ def create_user():
         email = '{}'.format(req_data.get("email"))
         phone = req_data.get("phone")
         location = '{}'.format(req_data.get("location"))
-        r0 = request.post(
+        r0 = requests.post(
             url="http://3.129.56.173:6000/api/v1/db/read",
             json={
                 "table":"users",
@@ -41,7 +44,7 @@ def create_user():
             return json.dumps(result)
             
         else:
-            r1 = request.post(
+            r1 = requests.post(
                 url="http://3.129.56.173:6000/api/v1/db/write",
                 json={
                     "insert":{
@@ -87,22 +90,25 @@ def create_retailer():
         address1 = '{}'.format(req_data.get("address1"))
         address2 = '{}'.format(req_data.get("address2"))
         location = '{}'.format(req_data.get("location"))
-        time = '{}'.format(req_data.get("time"))
+#        time = '{}'.format(req_data.get("time"))
 
         # {
         # "table" : <table_name>,
         # "columns" : ["<col_name>", ...],
         # "where" : "["<col_name = 'value'>", ...]
         # }
-        r0 = request.post(
+        r0 = requests.post(
             url="http://3.129.56.173:6000/api/v1/db/read",
             json={
                 "table":"users",
-                "columns":["email_id"]
+                "columns":["email_id"],
+                "where":[]
             }
         )
         result = r0.json()
-        listOfExistingUsers = result["email_id"] 
+        listOfExistingUsers = []
+        if result["count"]!=0:
+          listOfExistingUsers = result["email_id"] 
 
         if mail in listOfExistingUsers:
             result = {}
@@ -111,7 +117,7 @@ def create_retailer():
             return json.dumps(result)
         
         else:
-            r1 = request.post(
+            r1 = requests.post(
                 url="http://3.129.56.173:6000/api/v1/db/write",
                 json={
                     "insert":{
@@ -126,7 +132,6 @@ def create_retailer():
                         "address1":address1,
                         "address2":address2,
                         "lct":location,
-                        "registration_time":time
                     },
                     "table":"retailers",
                     "update": "0",
