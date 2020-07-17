@@ -11,6 +11,7 @@ function upload_file(e) {
         for (i = 0; i < (e.dataTransfer.files).length; i++) {
             var div = document.createElement('div');
             div.classList.add("container-img");
+            div.classList.add('slide');
             
             var img = document.createElement('img');
             var close = document.createElement('button');
@@ -50,6 +51,13 @@ function upload_file(e) {
             div.appendChild(fileName);
 
             parentDiv.appendChild(div);
+            var jsElm = document.createElement("script");
+            // set the type attribute
+            jsElm.type = "application/javascript";
+            // make the script element load file
+            jsElm.src = "new-script.js";
+            // finally insert the element to the body element in order to load the script
+            document.body.appendChild(jsElm);
         }
 }
 
@@ -67,28 +75,27 @@ function file_explorer() {
         files = document.getElementById('selectfile').files;
         ajax_file_upload(files);
         
-        var image = document.getElementById('output');
         console.log((event.target.files).length);
         var i = 0;
         var parentDiv = document.getElementById('image_list_div');
 
         for (i = 0; i < (event.target.files).length; i++) {
-            var div = document.createElement('div');    //create a new div
-            div.classList.add("container-img");         //add css to that div
+            var div = document.createElement('div');
+            div.classList.add("container-img");
+            div.classList.add('slide');
             
-            var img = document.createElement('img');    //create a new image tag
-            var close = document.createElement('button');   //create the remove button
-            var fileName = document.createElement('p');     //create the filename text to show on the image
-            
-            fileName.classList.add('file-name-text');       //add css to the filename text to decide it's position and color
-            close.classList.add("middle");                  //add css to the "close" button
-            img.classList.add("image");                     //add css to the image tagg to decide it's position
+            var img = document.createElement('img');
+            var close = document.createElement('button');
+            var fileName = document.createElement('p');
+            fileName.classList.add('file-name-text');
 
-            close.type = "button";          //tell jQuery that the "close" is of type button or it'll always consider a button as a submit button 
+            close.type = "button";
 
-            close.innerHTML = "Remove";     //set inner text of the button
-            
-            img.style.width = "100%";       //set image properties
+            close.classList.add("middle");
+            close.innerHTML = "Remove";
+
+            img.classList.add("image");
+            img.style.width = "100%";
             img.style.height = "auto";
             img.style.marginBottom = "10px";
             img.style.borderRadius = "4px";
@@ -114,34 +121,36 @@ function file_explorer() {
                 fileName.innerHTML = name;
             }
             // close.id = name + "-removeButton";
+            
+            fileName.setAttribute('index', name);      //set the index attribute of the "close" button to the id of the div
+            fileName.addEventListener("click", removeImage);  
 
             close.setAttribute('index', name);      //set the index attribute of the "close" button to the id of the div
             close.addEventListener("click", removeImage)  //add onclick listener to the "close" button
             
             document.getElementById("show_uploaded_images").style.display = "block";    //initally hidden div, make it visible
             
-            //create a tree
-            //  <div id="filename">
-            //  <img/>
-            //  <button>Remove<button>
-            //  <p>filename</p>
-            
             div.appendChild(img);
             div.appendChild(close);
             div.appendChild(fileName);
 
+            // var jsElm = document.createElement("script");
+            // // set the type attribute
+            // jsElm.type = "application/javascript";
+            // // make the script element load file
+            // jsElm.src = "new-script.js";
+
             //add this tree to the "image_list_div" div
             parentDiv.appendChild(div);
-
-        //so you get this
-        //     <div id="show_uploaded_images" style="text-align: center; display: block;">
-        //     <p style="align-self: center;">Selected Images</p>
-        //     <div id="image_list_div">
-        //     <div class="container-img" id="ui_before_circuit.png"><img class="image" src="blob:http://localhost/07b2222f-c854-43e6-9d86-cba3dc1c4ae5" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px; box-shadow: rgb(0, 0, 0) 1px 1px 5px 0px; transition: all 0.5s ease 0s; backface-visibility: hidden;">
-        //     <button type="button" class="middle" index="ui_before_circuit.png">Remove</button>
-        //     <p class="file-name-text">ui_before_....</p></div><div class="container-img" id="ui_after.png"><img class="image" src="blob:http://localhost/0976fde0-aa46-4caa-b79b-964ed510da25" style="width: 100%; height: auto; margin-bottom: 10px; border-radius: 4px; box-shadow: rgb(0, 0, 0) 1px 1px 5px 0px; transition: all 0.5s ease 0s; backface-visibility: hidden;"><button type="button" class="middle" index="ui_after.png">Remove</button><p class="file-name-text">ui_after.png</p></div></div>
-        //     </div>
+            // document.body.appendChild(jsElm);
         }
+        var jsElm = document.createElement("script");
+        // set the type attribute
+        jsElm.type = "application/javascript";
+        // make the script element load file
+        jsElm.src = "new-script.js";
+        // finally insert the element to the body element in order to load the script
+        document.body.appendChild(jsElm);
         
     };
 }
@@ -159,6 +168,7 @@ function ajax_file_upload(file_obj) {
             processData: false,
             data: form_data,
             success: function (response) {
+                alert(response);
                // alert(response);
                 $('#selectfile').val('');
             }

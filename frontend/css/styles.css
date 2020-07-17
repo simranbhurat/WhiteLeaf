@@ -10,20 +10,82 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
- .file-name-text{
+ .all-slides {
+  counter-reset: slides;
+  position: relative;
+  height: 100%;
+  overflow: auto;
+}
+
+.slides-title {
+  position: fixed;
+  z-index: 8;
+  text-align: center;
+  border-bottom: 1px solid #CDD1D8;
+  color: #8585A2;
+  font-size: 1rem;
+}
+
+.slide {
+  position: relative;
+  user-select: none;
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+.slide:before {
+  position: absolute;
+  right: 100%;
+  counter-increment: slides;
+  content: counter(slides);
+  color: #999;
+}
+
+.ui-sortable-helper {
+  transition: none !important;
+  animation: pulse 0.4s alternate infinite;
+}
+
+.sortable-placeholder {
+  height: 60px;
+  width: 5px;
+  border-left: 2px solid #4999DA;
+  position: absolute;
+  z-index: 6;
+}
+
+@keyframes pulse {
+  100% {
+    transform: scale(1.1);
+  }
+}
+.cloned-slides .slide {
+  position: absolute;
+  z-index: 1;
+}
+.cloned-slides .slide:before {
+  content: attr(data-pos);
+}
+
+.file-name-text{
   transition: .5s ease;
   opacity: 0;
   text-align: center;
   position: absolute;
-  top: 25%;
-  left: 30%;
-  transform: translate(-25%, -50%);
-  -ms-transform: translate(-25%, -50%);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 25px;
+  width: 80px;
   display: inline-block;
+  line-height: 1px;
   vertical-align: middle;
-  color:#f44336;
-  size: 3px;
+  color: black;
+  size: 5px;
  }
  .cen{
    margin-left: 200px;
@@ -75,6 +137,7 @@ a:hover {
 .container-img:hover .file-name-text {
   opacity: 0.9;
 }
+
  #show_uploaded_images{
   background-color: #EEE; 
   border: #999 5px dashed;
@@ -134,7 +197,7 @@ a:hover {
   border-radius: 8px;
 
 }
-.button{
+/* .button{
   background-color: white;
   border: none;
   color: black;
@@ -148,7 +211,7 @@ a:hover {
   width: 150px;
   height: 50px;
   border-radius: 8px;
-}
+} */
 
 #clickSignUp{
   background-color: white;
@@ -256,7 +319,7 @@ body {
 }
 
 
-button,
+/* button,
 [type=button],
 [type=reset],
 [type=submit] {
@@ -268,7 +331,7 @@ button:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled) {
   cursor: pointer;
-}
+} */
 
 button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
