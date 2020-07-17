@@ -7,6 +7,8 @@
 	ste text,
 	city text,
 	pwd varchar(15),
+	address1 varchar(255),
+	address2 varchar(255),
 	lct varchar(200),
 	registration_time timestamptz default Now();
 );
@@ -54,3 +56,6 @@ create table orders(
     initial_cost varchar,
     checkout_cost varchar,
 primary key(item_code,order_id));
+
+
+

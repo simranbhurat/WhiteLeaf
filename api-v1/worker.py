@@ -84,6 +84,8 @@ def create_retailer():
         state = '{}'.format(req_data.get("state"))
         city = '{}'.format(req_data.get("city"))
         password = '{}'.format(req_data.get("password"))
+        address1 = '{}'.format(req_data.get("address1"))
+        address2 = '{}'.format(req_data.get("address2"))
         location = '{}'.format(req_data.get("location"))
         time = '{}'.format(req_data.get("time"))
 
@@ -121,6 +123,8 @@ def create_retailer():
                         "ste":state,
                         "city":city,
                         "pwd":password,
+                        "address1":address1,
+                        "address2":address2,
                         "lct":location,
                         "registration_time":time
                     },
