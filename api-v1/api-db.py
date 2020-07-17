@@ -1,8 +1,10 @@
 import psycopg2
 from flask import Flask, jsonify, json, Response, request
 from psycopg2 import sql
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 POSTGRES_USER = "postgres"
 POSTGRES_PASSWD = "leaf8970"
@@ -36,7 +38,7 @@ def writeToDB():
             "where": "["<col_name = 'value'>" , ...]
         }
     """
-    if(request.method == "POST"):
+    if(request.method == 'POST'):
         req_data = request.get_json()
 
         table = req_data.get("table")   # get table name
@@ -75,9 +77,9 @@ def writeToDB():
                 query = sql.SQL("INSERT INTO " +
                                 table + "(" + insertColumns + ")" +
                                 " VALUES" + "(" + insertValues + ");")
-
+                print(query)
                 cursor.execute(query.as_string(connection))
-                connection.cursor()
+                connection.commit()
                 count = cursor.rowcount
 
                 if count != 0:                    # Successfully written to db
@@ -198,7 +200,7 @@ def writeToDB():
                     connection.close()
 
 
-@app.route("/api/v1/db/read", methods=['GET'])
+@app.route("/api/v1/db/read", methods=['POST'])
 def readFromDB():
     # So in read api, the "calling" API needs some response other than just the status code
     # like select(col1, col2, col3) from tablename where col1=val1, col2=val2...;
@@ -244,7 +246,7 @@ def readFromDB():
         try:
             connection = psycopg2.connect(user=POSTGRES_USER,
                                           password=POSTGRES_PASSWD,
-                                          host=POSTGRES_PASSWD,
+                                          host=POSTGRES_HOST,
                                           port="5432",
                                           database=POSTGRES_DB)
 
@@ -363,6 +365,11 @@ def readFromDB():
                                 row[colNameIndexMap[columns[j]]])
 
                 cursor.close()
+                return json.dumps(result, default=str)
+            else:
+                result = {}
+                result["count"]=0
+                result["status"]=201
                 return json.dumps(result, default=str)
         except Exception as err:
                 print(err)
