@@ -3,7 +3,7 @@
 	registration_no varchar(15) unique not null,
 	company_name varchar(20),
 	ph_no integer unique,
-	email_id varchar(20) unique primary key,
+	email_id varchar(70) unique primary key,
 	ste text,
 	city text,
 	pwd varchar(15),
