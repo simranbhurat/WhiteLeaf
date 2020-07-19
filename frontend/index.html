@@ -20,7 +20,38 @@
 
 
     <script>
-        var x = document.getElementById("demo");
+        var long;
+        var lat;
+        var locationString="";
+
+        window.addEventListener("load", function () {
+            function sendData() {
+
+                var XHROb = new XMLHttpRequest();
+                var formData = new FormData(formReg);
+                formData.append("registered", "1");
+                formData.append("location", locationString);
+                console.log(formData);
+
+                let jsonObject = {};
+
+                for (const [key, value] of formData.entries()) {
+                    jsonObject[key] = value;
+                }
+                console.log(jsonObject);
+
+                XHROb.open("PUT", "http://3.128.23.111:5000/api/v1/user/create");
+                XHROb.setRequestHeader('Content-type', 'application/json');
+                XHROb.send(JSON.stringify(jsonObject), true);
+            }
+            var formReg = document.getElementById("regForm");
+
+            formReg.addEventListener("submit", function (event) {
+                event.preventDefault();
+                sendData();
+            })
+        });
+
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -31,8 +62,10 @@
         }
 
         function showPosition(position) {
+            var x = document.getElementById("demo");
             x.innerHTML = "Latitude: " + position.coords.latitude +
                 "<br>Longitude: " + position.coords.longitude;
+            locationString = (position.coords.latitude).toString() +" "+(position.coords.longitude).toString();
         }
     </script>
     <script>
@@ -60,9 +93,9 @@
                 alert("Please enter confirm password");
 
             // If Not same return False.     
-            if (password1.localeCompare(password2)!=0)
+            if (password1.localeCompare(password2) != 0)
                 alert("Password did not match:( Please try again...");
-                //return false;
+            //return false;
         } 
     </script>
     <script>
@@ -89,9 +122,6 @@
         }
         var modal = document.getElementById('id01');
 
-
-
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
@@ -177,7 +207,83 @@
             </div>
 
             <div style="position: relative; display: none;" id="RegisteredForm">
-                <div id="signup" class="modal">
+                <h1>Sign Up</h1>
+                <p>Please fill in this form to create an account.</p>
+
+                <form method="post" id="regForm">
+
+                    <label for="name"><b>Company Name</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
+                    <br>
+
+                    <label for="pnumber"><b>Phone Number</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pnumber" required>
+                    <br>
+
+                    <label for="mail"><b>Email</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter Email" name="mail" required>
+                    <br>
+
+                    <label for="number"><b>GST Number</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter valid GST number" name="number" required>
+                    <br>
+
+                    <label for="state"><b>State</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter state" name="state" required>
+                    <br>
+
+                    <label for="city"><b>City</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="city" name="city" required>
+                    <br>
+
+                    <label for="password"><b>Password</b></label>
+                    <br>
+                    <input class="login-form" type="password" id="pass1" placeholder="Password" placeholder=""
+                        name="password" required>
+                    <br>
+                    <label for="rpsw"><b>Re-Enter The Password</b></label>
+                    <br>
+                    <input id="pass2" class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw"
+                        onchange="CheckPassword()" required>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                        Remember me
+                    </label>
+                    <br>
+
+                    <label for="address1"><b>Address line 1</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Provide valid Address link" name="address1"
+                        required>
+                    <br>
+                    <label for="address2"><b>Address line 2</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Provide valid Address link" name="address2"
+                        required>
+                    <br>
+
+                    <h5>Share your live shop location</h5>
+
+                    <button name="location" type="button" type="submit" class="button" onclick="getLocation()">Share
+                        Location</button>
+                    <p id="demo"></p>
+                    <br>
+                    <button type="submit" type="button" class="button" onSubmit="makeRequest()"
+                        type="button">Signup</a></button>
+                    <button type="button" class="button">Clear All</a></button>
+                    <br>
+                </form>
+            </div>
+
+            <div style="position: relative; display: none;" id="UnregisteredForm">
+                <div id="signup" class="modal1">
                     <form class="modal-content animate" method="post">
                 </div>
 
@@ -189,22 +295,22 @@
                 <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
                 <br>
 
-                <label for="pn"><b>Phone Number</b></label>
+                <label for="pnumber"><b>Phone Number</b></label>
                 <br>
-                <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pn" required>
-                <br>
-
-                <label for="email"><b>Email</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter Email" name="email" required>
+                <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pnumber" required>
                 <br>
 
-                <label for="gst"><b>GST Number</b></label>
+                <label for="mail"><b>Email</b></label>
                 <br>
-                <input class="login-form" type="text" placeholder="Enter valid GST number" name="gst" required>
+                <input class="login-form" type="text" placeholder="Enter Email" name="mail" required>
                 <br>
 
-                <label for="State"><b>State</b></label>
+                <label for="number"><b>Aadhar card number</b></label>
+                <br>
+                <input class="login-form" type="text" placeholder="Enter valid Aadhar Number" name="number" required>
+                <br>
+
+                <label for="state"><b>State</b></label>
                 <br>
                 <input class="login-form" type="text" placeholder="Enter state" name="state" required>
                 <br>
@@ -214,93 +320,33 @@
                 <input class="login-form" type="text" placeholder="city" name="city" required>
                 <br>
 
-                <label for="psw"><b>Password</b></label>
+                <label for="password"><b>Password</b></label>
                 <br>
-                <input class="login-form" type="password" id="pass1"
-                    pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;" placeholder="" name="psw"
-                    required>
+                <input class="login-form" type="password" id="pass1" placeholder="Password" placeholder=""
+                    name="password" required>
                 <br>
                 <label for="rpsw"><b>Re-Enter The Password</b></label>
                 <br>
-                <input id="pass2" class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw" onchange="CheckPassword()" required>
+                <input id="pass2" class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw"
+                    onchange="CheckPassword()" required>
                 <br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
                     Remember me
                 </label>
 
-                
+                <label for="address1"><b>Address line 1</b></label>
+                <br>
+                <input class="login-form" type="text" placeholder="Provide valid Address link" name="address1" required>
+                <br>
+                <label for="address2"><b>Address line 2</b></label>
+                <br>
+                <input class="login-form" type="text" placeholder="Provide valid Address link" name="address2" required>
+                <br>
 
                 <h5>Share your live shop location</h5>
 
-                <button type="button" type="submit" class="button" onclick="getLocation()">here</button>
-                <p id="demo"></p>
-                <br>
-                <button type="submit" type="button" class="button"
-                    onSubmit="return checkPassword(this)">Signup</a></button>
-                <button type="submit" type="button" class="button">Clear All</a></button>
-                <br>
-                </form>
-            </div>
-
-            <div style="position: relative; display: none;" id="UnregisteredForm">
-                <div id="signup" class="modal1">
-                    <form class="modal-content animate" method="post" >
-                </div>
-
-                <h1>Sign Up</h1>
-                <p>Please fill in this form to create an account.</p>
-
-                <label for="name"><b>Company Name</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
-                <br>
-
-                <label for="pn"><b>Phone Number</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pn" required>
-                <br>
-
-                <label for="email"><b>Email</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter Email" name="email" required>
-                <br>
-
-                <label for="aadhar"><b>Aadhar card number</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter valid Aadhar Number" name="aadhar" required>
-                <br>
-           
-                <label for="State"><b>State</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter state" name="state" required>
-                <br>
-
-                <label for="city"><b>City</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="city" name="city" required>
-                <br>
-                
-                <label for="psw"><b>Password</b></label>
-                <br>
-                <input class="login-form" type="password" placeholder="Enter Password" name="psw" required>
-                <br>
-
-                <label for="rpsw"><b>Re-Enter The Password</b></label>
-                <br>
-                <input class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw" required>
-                <br>
-
-
-
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
-                    Remember me
-                </label>
-
-               
-                <h5>Share your live shop location</h5>
-                <button type="button" type="submit" class="button" onclick="getLocation()">Here</button>
+                <button name="location" type="button" type="submit" class="button" onclick="getLocation()">here</button>
                 <p id="demo"></p>
                 <br>
 
