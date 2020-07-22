@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        // This function is to override the "LOAD" even of the event
+        // It executes ater the window loads
+        window.addEventListener("load", function(){
+            // cok will become cok = "retailer_email=vishalratnam@gmail.com"
+            var cok = decodeURIComponent(documnet.cookie);
+            
+            // after this, cok will become an array ["retailer_email", "vishalratnam@gmail.com"]
+            cok = cok.split("=");
+            
+            // so cok[1] is the required email
+            currentRetaler = cok[1];
+
+            // So now we know which user is logged in.
+
+            // We'll have an API which get a list of categories in which a given retailer has products
+            // In the response of the API call, we get that list
+
+            var xhrhttp = new XHRHttpRequest();
+
+            jsonData = {"retailer_email":currentRetailer};
+
+            xhrhttp.open("GET", "http://3.128.23.111:5000/api/v1/retailer/categories");
+            xhrhttp.setRequestHeader("Content-type","application/json");
+            xhrhttp.responseType = 'json';
+            // true means, asynchronuos request
+            xhrhttp.send(JSON.stringify(jsonData), true);
+            
+            xhrhttp.onreadystate = function(){
+              if(this.readyState==4 && this.status==200){
+                  document.createElement("img");
+                  var JSONResponse = this.response;
+
+                  retailer_categoryList = JSONResponse["category_list"];
+                //   
+              }  
+            }
+        })
+    </script>
+
+</head>
+    

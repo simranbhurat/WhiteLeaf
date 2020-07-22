@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background-color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', Montserrat, sans-serif ;
+    background-size:cover;
+    
+}
+.menu-area li a{
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    font-size: 13px;
+    line-height: 30px;
+    position: relative;
+    z-index: 1 ;
+    display: none;
+
+    
+}
+.tabcol{
+    bac
+}
+
+.custom-padding{
+    padding:55px;
+
+}
+
+.logo{
+    width: 15%;
+    float: left;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 25px;
+    text-align:left;
+    padding-left: 2%;
+
+}
+
+.menu-area li a:hover{
+    background: green;
+    color: #fff;
+
+}
+.menu-area li ul li {
+    display: none;
+}
+.menu-area li:hover ul li{
+    display:block;
+
+}
+

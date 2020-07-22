@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <title>Category</title>
+    <script>
+        // Each image has a id, and that is set in the cookie
+        function setCategory(id){
+            document.cookie = "category="+id ;
+        }
+        </script> 
+    
+    </head>
+<body>
+
+    <div class="container-fluid">
+        <h4 class="mb-3 cen">SELECT YOUR CATEGORY</h4>
+        <form class="needs-validation" novalidate class="modal-content animate">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3" id="arrow"> 
+                        <a href="new.html"><img src="images/clothing.png" class="img-rounded" style="width:100%; height:150px; object-fit: fill;" onclick="setCategory(this.id)" id="clothing"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/gadgets.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;" onclick="setCategory(this.id)" id="gadgets"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/medicine.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/spares.png" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/electronics.png" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/paint.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/toys.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/machinery.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;"></a>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"></a><img src="images/general.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <img src="images/grocery.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <img src="images/utensils.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <img src="images/furniture.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-3" id="arrow">
+                        <img src="images/cards.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <a href="new.html"><img src="images/bakery.PNG" class="img-rounded" style="width:100%; height:150px; object-fit: fill;" onclick="setCategory(this.id)" id="bakery"></a>
+                    </div>
+                    <!-- <div class="col-3" id="arrow">
+                        <img src="images/clothing.png" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div>
+                    <div class="col-3" id="arrow">
+                        <img src="images/clothing.png" class="img-rounded" style="width:100%; height:150px; object-fit: fill;">
+                    </div> -->
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    *{margin: 0; padding: 0;}
+    body{background: white; font-family: serif;}
+    .form-wrap{ width: 70%; background: #3e3d3d; padding: 20px 20px; box-sizing: border-box; margin-left: auto;
+  margin-right: auto;}
+    h3{text-align: center; color:#fff; font-weight: normal; margin-bottom: 20px;}
+    input{background: none; border:1px solid #fff; border-radius: 3px; padding: 5px; box-sizing: border-box; margin-bottom: 20px; color: #fff;}
+    input[type="button"]{background: #bac675; border:0 ; cursor: pointer; color: #3e3d3d;;}
+    input[type="button"]:hover{background: #a4b15c; transition: 0.6s; }
+    ::placeholder{color: white;}
+</style>
+<script>
+
+
+</script>
+<body>
+    <div class="custom-padding">   
+    <div class="form-wrap">
+        <form>
+        
+            <h3>Item Master</h3>
+            <table style="width:100%">
+            <tr>
+                <td>
+                    <label for="itemCode" style="color: #ecf1f4;">Item Code:</label>
+                </td>
+                <td>
+                    <input type="text" id="itemCode">
+                </td>              
+                <td>
+                    <label for="itemName" style="color: #ecf1f4;"> Item Name:</label>
+                </td>
+                <td>              
+                     <input type="text" id="itemName">
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    <label for="Model" style="color: #ecf1f4;"> Model:</label> 
+                </td>
+                <td>
+                     <input type="text" id="Model">
+                </td>
+
+                <td>
+                    <label for="Brand" style="color: #ecf1f4;"> Brand:</label>    
+                </td>  
+                <td>            
+                     <input type="text" id="Brand">
+                </td>
+            </tr>
+           
+            <tr>
+                <td>
+                    <label for="ItemType" style="color: #ecf1f4;"> Item Type:</label> 
+                </td>    
+                <td>             
+                     <input type="text" id="ItemType">
+                </td>
+
+                <td>
+                    <label for="Category" style="color: #ecf1f4;"> Category:</label> 
+                </td>     
+                <td>            
+                     <input type="text" id="Category">
+                </td>
+
+            </tr>
+
+            <tr>
+               
+                <td>
+                    <label for="No.Pcs" style="color: #ecf1f4;">No.Pcs:</label>  
+                </td>
+                <td>           
+                     <input type="text" id="No.Pcs">
+                </td>
+
+                <td>
+                    <label for="Unit" style="color: #ecf1f4;"> Unit:</label>    
+                </td>   
+                <td>           
+                     <input type="text" id="Unit">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Rack/ Location No." style="color: #ecf1f4;"> Rack/ Location No.:</label>
+                </td>  
+                <td>                
+                     <input type="text" id="Rack/ Location No.">        
+                </td>
+            </tr>
+            </table><br>
+
+        <table style="width:100%">
+            <tr>
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="C.S.P" style="color: #ecf1f4;">C.S.P:</label>
+                </td>
+                <td>                
+                     <input type="number" id="C.S.P">
+                </td>
+
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="W.S.P" style="color: #ecf1f4;">W.S.P:</label>
+                </td>
+                <td>                
+                     <input type="number" id="W.S.P">
+                </td>
+
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="R.S.P" style="color: #ecf1f4;">R.S.P:</label>
+                </td> 
+                <td>                
+                     <input type="number" id="R.S.P">
+                </td>
+
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="M.R.P" style="color: #ecf1f4;">M.R.P:</label> 
+                </td>
+                <td>                 
+                     <input type="number" id="M.R.P">
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="Discount" style="color: #ecf1f4;">Discount:</label>
+                </td>
+                <td>               
+                     <input type="number" id="Discount">
+                </td>
+
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="Add On Discount" style="color: #ecf1f4;">Add On Discount:</label>
+                </td>
+                <td>                 
+                     <input type="number" id="Add On Discount">
+                </td>
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="Re-Order Level" style="color: #ecf1f4;">Re-Order Level:</label>
+                </td>
+                <td>
+                     <input type="number" id="Re-Order Level">
+                </td>
+                
+                <td style="padding-bottom: 11px; padding-left: 15px;">
+                    <label for="Max Idle QTY" style="color: #ecf1f4;">Max Idle QTY:</label>
+                </td>
+                <td>               
+                     <input type="number" id="Max Idle QTY">
+                </td>
+            </tr>
+        </table> <br>
+
+        <table style="width:100%">
+            
+            <td>
+                <label for="Local Tax Name" style="color: #ecf1f4;">Local Tax Name:  </label>
+                <select name="LTN" id="Local Tax Name">
+                    <option value="GST 1%"> GST 1% </option>
+                    <option value="GST 5%"> GST 5% </option>
+                    <option value="GST 12%"> GST 12% </option>
+                    <option value="GST 18%"> GST 18%</option>
+                    
+                </select>
+            </td>
+            <td>
+                <label for="Interstate Tax Name" style="color: #ecf1f4;">Interstate Tax Name:  </label>                  
+                <select name="ITN" id="Interstate Tax Name">
+                    <option value="IGST 5%"> IGST 5% </option>
+                    <option value="IGST 12%"> IGST 12% </option>
+                    <option value="IGST 18%"> IGST 18%</option> 
+                </select>
+            </td>
+            <td>
+                <label for="HSN" style="color: #ecf1f4;">HSN Code:  </label>                  
+                <select name="ITN" id="HSN code">
+                    <option value="IGST 5%"> IGST 5% </option>
+                    <option value="IGST 12%"> IGST 12% </option>
+                    <option value="IGST 18%"> IGST 18%</option>
+                    
+                </select>
+            </td>
+        </table>
+
+        <table style="width:100%" class = >
+            <tr>
+                <!-- <th>
+                <input type = "checkbox" id = "Mi" name = "Maintain Inventory" value = "on">
+                <label for="Mi"> Maintain Inventory</label><br>
+                </th>
+                
+                <th>
+                <input type = "checkbox" id = "Ei" name = "Effect Invoicing" value = "on"> 
+                <label for="Ei"> Effect Invoicing</label><br>
+                </th> -->
+
+                <th>
+                <input type = "checkbox" id = "se" name = "Serialized Item" value = "on">
+                <label for="se"> Serialized Item</label><br>
+                </th>
+
+                <th>
+                <input type = "checkbox" id = "ta" name = "Taxable" value = "on"> 
+                <label for="ta"> Taxable</label><br>
+                </th>
+            </tr>
+            <tr>
+                <td>
+                <input type = "checkbox" id = "it" name = "Include Tax" value = "on">
+                <label for="it"> Include Tax</label><br>
+                </td>
+                
+                <td>
+                <input type = "checkbox" id = "dap" name = "Disable Auto Pricing" value = "on"> 
+                <label for="dap"> Disable Auto Pricing</label><br>
+                </td>
+
+                <input type = "checkbox" id = "orie" name = "Open Rate Item" value = "on">
+                <label for="orie">Open Rate Itemm</label><br>
+
+                </tr>
+                <input type = "checkbox" id = "Esd" name = "ESpecial Discount value = "on"> 
+                <label for="Esd"> Special Discount/label><br>
+            
+            
+
+            <!-- <input type = "checkbox" id = "jp" name = "Job Product" value = "on">
+            <label for="jp"> Job Product</label><br> -->
+
+            <input type = "checkbox" id = "cr" name = "Coupon Rqd" value = "on"> 
+            <label for="cr"> Coupon Rqd</label><br>
+            
+            
+        </table>
+        <table>
+            <tr>
+            <td>
+                <label for="SNC" style="color: #ecf1f4;">Supplier Name & Code</label>                  
+                 <input type="text" id="SNC">
+            </td>
+            <td>
+            <input type = "checkbox" id = "bi" name = "Block Item" value = "on"> 
+            <label for="bi"> Block Item</label><br>
+            </td>
+        </tr>
+        </table>
+        <input type="button" value="Submit">
+    
+        </form>
+    </div>
+    </div>
+</body>
+</html>

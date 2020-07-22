@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        window.addEventListener("load", function(){
+            // cok will become cok = "retailer_email=vishalratnam@gmail.com"
+            var cok = decodeURIComponent(documnet.cookie);
+            
+            // after this, cok will become an array ["retailer_email", "vishalratnam@gmail.com"]
+            cok = cok.split("=");
+            
+            // so cok[1] is the required email
+            currentRetaler = cok[1];
+            
+
+        })
+    </script>
+
+</head>
+    

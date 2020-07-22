@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+
+
+
+  <!-- Optional JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+
+  <script src="script.js"></script>
+
+  <link href="css/styles.css" rel="stylesheet" />
+  <script>
+    window.addEventListener("load", function () {
+      cookie = decodeURIComponent(document.cookie);
+      var cat = cookie.split("=")[1];
+
+      // alert("Selected category in the previous page is " + cat);
+
+      reqForm = cat + "Form";
+      (document.getElementById(reqForm)).style.display = "block";
+    });
+
+  </script>
+
+  <title>Home Page</title>
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="home_page.html">HOME</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link" href="category.html">NEW<span class="sr-only"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="edit_roductcategory.html" id="edit">EDIT/DELETE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="category.html">REPORTS<span class="sr-only"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid" id="clothingForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="Brand">Brand</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="gender">Gender</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="gender" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="color">Color</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="color" placeholder="" value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="all_colors">
+                <label for="all_colors">Available in all colors</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="size">Size</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="size" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="container-fluid" id="gadgetsForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="Brand">Brand</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+              </div>
+
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="color">Color</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="color" placeholder="" value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="all_colors">
+                <label for="all_colors">Available in all colors</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="size">Size</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="size" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="container-fluid" id="medicineForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="Brand">Brand</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+              </div>
+
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="container-fluid" id="sparesForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="Brand">Brand</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+              </div>
+            
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="color">Color</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="color" placeholder="" value="" required>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="container-fluid" id="electronicsForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="Brand">Brand</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="subcategory">Sub-Category</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+
+              <div class="col-4">
+                <input type="checkbox" id="all_colors">
+                <label for="all_colors">Available in all colors</label>
+              </div>
+            </div>
+
+            <div class="row">
+            
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                  value="" required>
+              </div>
+              <div class="col-4">
+                <input type="checkbox" id="hide">
+                <label for="hide">Hide price</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="container-fluid" id="paintForm" style="display: none;">
+              <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+              <form class="needs-validation" novalidate class="modal-content animate">
+                <div class="row">
+                  <div class="col-7">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-1">
+                          <label for="product_name">Name</label>
+                        </div>
+                        <div class="col-5">
+                          <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Valid product name is required.
+                          </div>
+                        </div>
+                        <div class="col-1">
+                          <label for="product_id">Id/Code</label>
+                        </div>
+                        <div class="col-5">
+                          <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Valid id is required.
+                          </div>
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-1">
+                          <label for="Brand">Brand</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" id="Brand" placeholder="" value="" required>
+                        </div>
+ 
+                        <div class="col-1">
+                          <label for="subcategory">Sub-Category</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" id="subcategory" placeholder="" value="" required>
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-1">
+                          <label for="quantity">Quantity</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" id="quantity" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Quantity required
+                          </div>
+                        </div>
+                        <div class="col-1">
+                          <label for="color">Color</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" id="color" placeholder="" value="" required>
+                        </div>
+                        <div class="col-4">
+                          <input type="checkbox" id="all_colors">
+                          <label for="all_colors">Available in all colors</label>
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-1">
+                          <label for="size">Size</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" style="width:80px;" type="text" class="form-control" id="size" placeholder=""
+                            value="" required>
+                        </div>
+                        <div class="col-1">
+                          <label for="unit">Unit</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" style="width:80px;" type="text" class="form-control" id="unit" placeholder=""
+                            value="" required>
+                        </div>
+                        <div class="col-4">
+                          <input type="checkbox" id="hide">
+                          <label for="hide">Hide price</label>
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-1">
+                          <label for="mrp">M.R.P</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+                        </div>
+                        <div class="col-1">
+                          <label for="bp">Best Price</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+                        </div>
+                        <div class="col-1">
+                          <label for="discount">Discount</label>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                            required>
+                        </div>
+                      </div>
+          
+                      <div class="row">
+                        <div class="col-2">
+                          <label for="Description">Description</label>
+                        </div>
+                        <div class="col-8">
+                          <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-2">
+                          <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col-3">
+                    <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+                      <div id="drag_upload_file">
+                        <p>Drop file here</p>
+                        <p>or</p>
+                        <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+                        <input type="file" id="selectfile" multiple>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="col-2">
+                    <div id="show_uploaded_images" style="text-align: center; display: none;">
+                      <p style="align-self: center;">Selected Images</p>
+                      <div id="image_list_div" class="all-slides">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  
+  <div class="container-fluid" id="bakeryForm" style="display: none;">
+    <h4 class="mb-3 cen">ENTER THE PRODUCT DETAILS</h4>
+    <form class="needs-validation" novalidate class="modal-content animate">
+      <div class="row">
+        <div class="col-7">
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+                <label for="product_name">Name</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid product name is required.
+                </div>
+              </div>
+              <div class="col-1">
+                <label for="product_id">Id/Code</label>
+              </div>
+              <div class="col-5">
+                <input type="text" class="form-control" id="product_id" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid id is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-1">
+                <label for="quantity">Quantity</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="quantity" placeholder="" required>
+                <div class="invalid-feedback">
+                  Quantity required
+                </div>
+              </div>
+
+              <div class="col-1">
+                <label for="unit">Unit</label>
+              </div>
+              <div class="col-3">
+                <input type="text" class="form-control" id="unit" placeholder="" required>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-1">
+                <label for="mrp">M.R.P</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="mrp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="bp">Best Price</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="bp" placeholder="" value="" required>
+              </div>
+              <div class="col-1">
+                <label for="discount">Discount</label>
+              </div>
+              <div class="col-3">
+                <input type="text" style="width:80px;" class="form-control" id="discount" placeholder="" value=""
+                  required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2">
+                <label for="Description">Description</label>
+              </div>
+              <div class="col-8">
+                <textarea class="desc" id="Description" style="width: 100%;"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+            <div id="drag_upload_file">
+              <p>Drop file here</p>
+              <p>or</p>
+              <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+              <input type="file" id="selectfile" multiple>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-2">
+          <div id="show_uploaded_images" style="text-align: center; display: none;">
+            <p style="align-self: center;">Selected Images</p>
+            <div id="image_list_div" class="all-slides">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+</body>
+
+</html>
