@@ -1,0 +1,235 @@
+accessories = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+clothing = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+        
+    }
+]

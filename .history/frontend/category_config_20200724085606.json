@@ -1,0 +1,2051 @@
+clothing = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+        "option": [{
+
+            "Kilogram" : "KG"
+        },        
+        {
+            "Gram" : "G"
+        },    
+        {
+            "Meter" : "M"
+        },        {
+            "Centimeter" : "CM"
+        }
+        {
+            "Millimeter" : "MM"
+        }
+        {
+            "Liter" : "L"
+        }
+        {
+            "Milliliters" : "ML"
+        }
+        {
+            "Piece" : "PCS"
+        }
+        {
+            "Inches" : "INCH"
+        
+        }
+    
+        ]
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+        
+    },
+    {
+     
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+        
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+        
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+        
+    }
+]
+
+footwear = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
+
+home_and_living = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
+
+watches = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
+
+
+accessories = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+gadgets = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+   
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+bike_spares = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+  
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+toys_and_gifts = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+medicine = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+  
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+   
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+consumer_electronics =[
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+   
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+tools_and_hardware = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+  
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+machinery = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+  
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+stationary = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+   
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+  
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+car_spares = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+   
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+pet_supplies = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+  
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+sports = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+   
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+[
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "false"
+    }
+]
+
+beauty =  [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
+    },
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    { 
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
+
+bakery = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
+
+grocery = [
+    {
+        "type": "text",
+        "label": "Name",
+        "id": "product_name",
+        "name": "product_name",
+        "placeholder": "Name of the product",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Id/Code",
+        "id": "product_id",
+        "name": "product_id",
+        "placeholder": "Product Code",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Brand",
+        "id": "brand",
+        "name": "brand",
+        "placeholder": "Product Brand",
+        "required": "false"
+    },
+    
+    {
+        "type": "text",
+        "label": "Sub-category",
+        "id": "sub_category",
+        "name": "sub_category",
+        "placeholder": "First Name",
+        "required": "true",
+        "style": "",
+        "server-loaded": "true",
+        "server-api": "http://IP:port/route/to/api"
+    },
+    {
+        "type": "text",
+        "label": "Quantity",
+        "id": "quantity",
+        "name": "quantity",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+  
+    { 
+        "type": "number",
+        "label": "Unit",
+        "id": "unit",
+        "name": "unit",
+        "placeholder": "unit",
+        "required": "true",
+    },
+    
+    {
+        "type": "number",
+        "label": "Max retail price",
+        "id": "mrp",
+        "name": "mrp",
+        "placeholder": "MRP",
+        "required": "true"
+    },
+    {
+        "type": "number",
+        "label": "Best Price",
+        "id": "bp",
+        "name": "bp",
+        "placeholder": "Best sellig price",
+        "required": "false"
+    },
+    {
+        "type": "number",
+        "label": "Discount",
+        "id": "discount",
+        "name": "discount",
+        "placeholder": "Discount",
+        "required": "false"
+    },
+    {
+        "type": "text",
+        "label": "Description",
+        "id": "desc",
+        "name": "desc",
+        "placeholder": "Description",
+        "required": "true"
+        
+    }
+]
