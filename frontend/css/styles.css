@@ -11,6 +11,9 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+ row{
+  margin-left: 30px;
+ }
  #arrow {
   position: relative;
   top: 0;
