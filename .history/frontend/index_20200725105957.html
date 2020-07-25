@@ -54,7 +54,7 @@
                 // Or else we tell wrong password or inexistent user
                 // Then we set a global variable on the browser with the retailer's email.
                 // This variable can then be read by all successive pages to know who is using the current page                
-                XHROb.onreadystatechange = function(){
+                XHROb.onreadystatechange = funtion(){
                     // this.readyState=4 means, the response has arrived
                     // this.status=200, is the status returned from the APIs ok
                     if (this.readyState == 4 && this.status == 200) {
