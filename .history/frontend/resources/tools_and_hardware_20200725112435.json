@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -32,7 +13,7 @@
         "id": "product_id",
         "name": "product_id",
         "placeholder": "Product Code",
-        "required": "true"
+        "required": "false"
     },
     {
         "type": "text",
@@ -59,7 +40,15 @@
         "id": "quantity",
         "name": "quantity",
         "placeholder": "Number of Units",
-        "required": "true",
+        "required": "true"
+    },
+    {
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false"
     },
     {
         "type": "select",
@@ -120,14 +109,6 @@
         "id": "discount",
         "name": "discount",
         "placeholder": "Discount",
-        "required": "false"
-    },
-    {
-        "type": "date",
-        "label": "Expiry Date",
-        "id": "ed",
-        "name": "expiry date",
-        "placeholder": "Expiry Date",
         "required": "false"
     },
     {

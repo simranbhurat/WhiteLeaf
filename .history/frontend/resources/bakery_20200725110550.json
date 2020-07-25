@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -59,7 +40,7 @@
         "id": "quantity",
         "name": "quantity",
         "placeholder": "Number of Units",
-        "required": "true",
+        "required": "true"
     },
     {
         "type": "select",

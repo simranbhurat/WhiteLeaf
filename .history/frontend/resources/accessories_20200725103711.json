@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -32,7 +13,7 @@
         "id": "product_id",
         "name": "product_id",
         "placeholder": "Product Code",
-        "required": "true"
+        "required": "false"
     },
     {
         "type": "text",
@@ -41,6 +22,25 @@
         "name": "brand",
         "placeholder": "Product Brand",
         "required": "false"
+    },
+    {
+        "type": "select",
+        "label": "Gender",
+        "id": "gender",
+        "name": "gender",
+        "placeholder": "Gender",
+        "required": "true",
+        "option": [
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
+        ]
     },
     {
         "type": "text",
@@ -62,7 +62,15 @@
         "required": "true",
     },
     {
-        "type": "select",
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
         "label": "Unit",
         "id": "unit",
         "name": "unit",
@@ -120,14 +128,6 @@
         "id": "discount",
         "name": "discount",
         "placeholder": "Discount",
-        "required": "false"
-    },
-    {
-        "type": "date",
-        "label": "Expiry Date",
-        "id": "ed",
-        "name": "expiry date",
-        "placeholder": "Expiry Date",
         "required": "false"
     },
     {

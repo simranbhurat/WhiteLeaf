@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -62,6 +43,14 @@
         "required": "true",
     },
     {
+        "type": "number",
+        "label": "Size",
+        "id": "size",
+        "name": "size",
+        "placeholder": "Number of Units",
+        "required": "true",
+    },
+    {
         "type": "select",
         "label": "Unit",
         "id": "unit",
@@ -99,6 +88,14 @@
         ]
     },
     {
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
         "type": "number",
         "label": "Max retail price",
         "id": "mrp",
@@ -120,14 +117,6 @@
         "id": "discount",
         "name": "discount",
         "placeholder": "Discount",
-        "required": "false"
-    },
-    {
-        "type": "date",
-        "label": "Expiry Date",
-        "id": "ed",
-        "name": "expiry date",
-        "placeholder": "Expiry Date",
         "required": "false"
     },
     {

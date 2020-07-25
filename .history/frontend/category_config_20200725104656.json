@@ -17,7 +17,7 @@
 
  
 
- [
+grocery [
     {
         "type": "text",
         "label": "Name",
@@ -62,7 +62,7 @@
         "required": "true",
     },
     {
-        "type": "select",
+        "type": "number",
         "label": "Unit",
         "id": "unit",
         "name": "unit",

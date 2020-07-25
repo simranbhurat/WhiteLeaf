@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -26,14 +7,7 @@
         "placeholder": "Name of the product",
         "required": "true"
     },
-    {
-        "type": "text",
-        "label": "Id/Code",
-        "id": "product_id",
-        "name": "product_id",
-        "placeholder": "Product Code",
-        "required": "true"
-    },
+   
     {
         "type": "text",
         "label": "Brand",
@@ -43,7 +17,7 @@
         "required": "false"
     },
     {
-        "type": "text",
+        "type": "select",
         "label": "Sub-category",
         "id": "sub_category",
         "name": "sub_category",
@@ -59,7 +33,7 @@
         "id": "quantity",
         "name": "quantity",
         "placeholder": "Number of Units",
-        "required": "true",
+        "required": "true"
     },
     {
         "type": "select",

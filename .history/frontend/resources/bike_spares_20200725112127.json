@@ -1,23 +1,4 @@
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
- [
+[
     {
         "type": "text",
         "label": "Name",
@@ -43,7 +24,7 @@
         "required": "false"
     },
     {
-        "type": "text",
+        "type": "select",
         "label": "Sub-category",
         "id": "sub_category",
         "name": "sub_category",
@@ -59,10 +40,18 @@
         "id": "quantity",
         "name": "quantity",
         "placeholder": "Number of Units",
-        "required": "true",
+        "required": "true"
     },
     {
-        "type": "select",
+        "type": "text",
+        "label": "Color",
+        "id": "color",
+        "name": "color",
+        "placeholder": "color",
+        "required": "false",
+    },
+    {
+        "type": "number",
         "label": "Unit",
         "id": "unit",
         "name": "unit",
@@ -120,14 +109,6 @@
         "id": "discount",
         "name": "discount",
         "placeholder": "Discount",
-        "required": "false"
-    },
-    {
-        "type": "date",
-        "label": "Expiry Date",
-        "id": "ed",
-        "name": "expiry date",
-        "placeholder": "Expiry Date",
         "required": "false"
     },
     {
