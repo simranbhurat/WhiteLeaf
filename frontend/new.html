@@ -11,6 +11,8 @@
     integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -27,6 +29,10 @@
 
   <link href="css/styles.css" rel="stylesheet" />
   <script>
+    
+    // $(document).ready(function() {
+    //   $('.js-example-basic-single').select2();
+    // });
     window.addEventListener("load", function () {
       cookie = decodeURIComponent(document.cookie);
       var cat = cookie.split("=")[1];
@@ -78,21 +84,27 @@
       "placeholder": "Gender",
       "required":"true",
       "option":[
-        {"text":"Male", "value":"M"},
-        {"text":"Female", "value":"F"},
-        {"text":"Unisex", "value":"U"}
+            {
+                "Male": "M"
+            },
+            {
+                "Female": "F"
+            },
+            {
+                "Unisex": "U"
+            }
       ]
     },
     {
-      "type": "text",
+      "type": "select",
       "label":"Sub-category",
       "id": "sub_category",
       "name":"sub_category",
-      "placeholder": "First Name",
+      "placeholder": "Sub-category",
       "required":"true",
       "style": "",
-      "server-loaded":"true",
-      "server-api":"http://IP:port/route/to/api"
+      "server_loaded":"true",
+      "server_api":"http://3.128.23.111:5000/api/v1/list/subcat"
     },
     {
       "type": "text",
@@ -169,14 +181,52 @@
         }
 
         if(j[p].type == "select"){
-          var selectOptions = j[p].option;
-          for(var option in selectOptions){
-            var newOption = document.createElement("option");
-            var op = new Option();
-            op.value = selectOptions[option].value;
-            op.text = selectOptions[option].text;
-            newOption.append(op);
-            newInput.appendChild(newOption);
+          if(j[p].server_loaded != null){
+
+            newInput.classList.add("js-example-basic-single");
+            var XHROb = new XMLHttpRequest();
+            XHROb.open("GET", "http://3.128.23.111:5000/api/v1/list/subcat");
+                // Set request header to get a json repsonse
+            XHROb.setRequestHeader('Content-type', 'application/json');
+            XHROb.send();              
+            XHROb.onreadystatechange = function(){
+              if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+                var subCategories = response[cat.replace(/_/g, " ").toUpperCase()];
+                // console.log(subCategories);
+                for(subcat in subCategories){
+                  console.log(subCategories[subcat]);
+                  var newOption = document.createElement("option");
+                  var op = new Option();
+                  op.value =subCategories[subcat];
+                  op.text = subCategories[subcat];
+                  newOption.append(op);
+                  var subSelect = document.getElementById("sub_category");
+                  // newInput.append(newOption);
+                  subSelect.appendChild(newOption);
+                  // document.body.appendChild(newOption);
+                }
+                $('.js-example-basic-single').select2();
+              }
+            }
+          }
+          else{
+            var selectOptions = j[p].option;
+            for (const ele in selectOptions) {
+              if (selectOptions.hasOwnProperty(ele)) {
+                const element = selectOptions[ele];
+                for(jkl in element){
+                  // console.log(jkl,element[jkl]);
+                  var newOption = document.createElement("option");
+                  var op = new Option();
+                  op.value = element[jkl];
+                  op.text = jkl;
+                  newOption.append(op);
+                  newInput.appendChild(newOption);
+                }
+              }
+            }
           }
         }
         
@@ -191,6 +241,8 @@
         if(j[p].style != null){
           
         }
+
+        
         col4Div.appendChild(newLabel);
         col8Div.appendChild(newInput);
         rowDiv.appendChild(col4Div);

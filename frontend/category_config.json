@@ -70,11 +70,11 @@ clothing = [
         "required": "true",
     },
     {
-        "type": "number",
+        "type": "select",
         "label": "Unit",
         "id": "unit",
         "name": "unit",
-        "placeholder": "unit",
+        "placeholder": "Unit",
         "required": "true",
         "option": [
             {
