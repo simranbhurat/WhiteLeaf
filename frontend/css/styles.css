@@ -253,8 +253,22 @@ a:hover {
   display: inline-block;
 }
 
-input[type=text], input[type=password] {
+input[type=number]{
   width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  size: "10";
+  box-align: right;
+}
+select{
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=text], input[type=password] {
+  width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;

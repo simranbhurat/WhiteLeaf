@@ -33,130 +33,48 @@
     // $(document).ready(function() {
     //   $('.js-example-basic-single').select2();
     // });
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+          }
+      }
+      return "";
+    }
     window.addEventListener("load", function () {
-      cookie = decodeURIComponent(document.cookie);
-      var cat = cookie.split("=")[1];
+
+      var cat = getCookie("category");
+      var configUrl = "https://whiteleaf-resources.s3.us-east-2.amazonaws.com/form-config/" + cat + ".json";
       alert("Selected category in the previous page is " + cat);
       reqForm = cat + "Form";
 
-      var parentDiv = document.createElement("div");
-      parentDiv.classList.add("container-fluid");
-      var head = document.createElement("h4");
-      head.innerHTML = "Enter Product Details";
-      parentDiv.appendChild(head);
+      var parentRow = document.getElementById("parentRow");
+
+      var formCol = document.createElement("div");
+      formCol.classList.add("col-7");
 
       var newFrom = document.createElement("FORM");
-      parentDiv.appendChild(newFrom);
       newFrom.setAttribute("id", reqForm);
       newFrom.classList.add("container-fluid");
+      formCol.appendChild(newFrom);
 
-      jsonConfig = [
-    {
-      "type": "text",
-      "label":"Name",
-      "id": "product_name",
-      "name":"product_name",
-      "placeholder": "Name of the product",
-      "required":"true",
-      "style":{"width" : "100%"}
-    },
-    {
-      "type": "text",
-      "label":"Id/Code",
-      "id": "product_id",
-      "name":"product_id",
-      "placeholder": "Product Code",
-      "required":"true"
-    },
-    {
-      "type": "text",
-      "label":"Brand",
-      "id": "brand",
-      "name":"brand",
-      "placeholder": "Product Brand",
-      "required":"true"
-    },
-    {
-      "type": "select",
-      "label":"Gender",
-      "id": "gender",
-      "name":"gender",
-      "placeholder": "Gender",
-      "required":"true",
-      "option":[
-            {
-                "Male": "M"
-            },
-            {
-                "Female": "F"
-            },
-            {
-                "Unisex": "U"
-            }
-      ]
-    },
-    {
-      "type": "select",
-      "label":"Sub-category",
-      "id": "sub_category",
-      "name":"sub_category",
-      "placeholder": "Sub-category",
-      "required":"true",
-      "style": "",
-      "server_loaded":"true",
-      "server_api":"http://3.128.23.111:5000/api/v1/list/subcat"
-    },
-    {
-      "type": "text",
-      "label":"Quantity",
-      "id": "quantity",
-      "name":"quantity",
-      "placeholder": "Number of Units",
-      "required":"true",
-    },
-    {
-      "type": "number",
-      "label":"Size",
-      "id": "size",
-      "name":"size",
-      "placeholder": "Number of Units",
-      "required":"true",
-    },
-    {
-      "type": "number",
-      "label":"Max retail price",
-      "id": "mrp",
-      "name":"mrp",
-      "placeholder": "MRP",
-      "required":"true"
-    },
-    {
-      "type": "number",
-      "label":"Best Price",
-      "id": "bp",
-      "name":"bp",
-      "placeholder": "Best sellig price",
-      "required":"true"
-    },
-    {
-      "type": "number",
-      "label":"Discount",
-      "id": "discount",
-      "name":"discount",
-      "placeholder": "Discount",
-      "required":"true"
-    },
-    {
-      "type":"text",
-      "label":"Description",
-      "id":"desc",
-      "name":"desc",
-      "placeholder": "Description",
-      "required": "true"
-    }   
-    ];
+      $.ajax({
+        url:configUrl,
+        type:"GET",
+        dataType: "json",
+        async: false,
+        success:function(data) {
+            j= data;
+        }
+      });
 
-      var j = JSON.parse(JSON.stringify(jsonConfig));
+      // var j = JSON.parse(JSON.stringify(jsonConfig));
       for(var p in j){
         console.log(j[p]);
 
@@ -164,20 +82,24 @@
         rowDiv.classList.add("row");
 
         var col4Div = document.createElement("div");
-        col4Div.classList.add("col-1");
+        col4Div.classList.add("col-3");
+        // col4Div.style.textAlign = "center";
         var newLabel = document.createElement("label");
         newLabel.innerHTML = j[p].label;
+        newLabel.style.verticalAlign = "middle";
+        newLabel.style.margin = "auto";
         newLabel.setAttribute("for", j[p].id);
         col4Div.appendChild(newLabel);
 
         var col8Div = document.createElement("div");
-        col8Div.classList.add("col-6");
+        col8Div.classList.add("col-9");
 
         if(j[p].type == "select"){
           var newInput = document.createElement("select");
         }else{
           var newInput = document.createElement("input");
           newInput.setAttribute("type", j[p].type);
+          newInput.classList.add("form-control");
         }
 
         if(j[p].type == "select"){
@@ -240,17 +162,27 @@
 
         if(j[p].style != null){
           
-        }
-
-        
+        }        
         col4Div.appendChild(newLabel);
         col8Div.appendChild(newInput);
         rowDiv.appendChild(col4Div);
         rowDiv.appendChild(col8Div);
+        
         newFrom.appendChild(rowDiv);
+        
       }
-      parentDiv.appendChild(newFrom);
-      document.body.appendChild(parentDiv);
+      var submitButton = document.createElement("button");
+      submitButton.setAttribute("type","submit");
+      submitButton.setAttribute("type","button");
+      submitButton.setAttribute("onclick","ajax_file_upload()");
+      submitButton.innerHTML = "Submit";
+      submitButton.classList.add("btn");
+      submitButton.classList.add("btn-primary");
+      submitButton.style.margin = "20px";
+      submitButton.style.alignSelf = "center";
+      newFrom.appendChild(submitButton);
+      var beforeDiv = document.getElementById("image_upload_div");
+      parentRow.insertBefore(formCol, beforeDiv);
     });
 
   </script>
@@ -279,6 +211,29 @@
       </ul>
     </div>
   </nav>
+  <div class="container-fluid" id="parentDiv">
+  <h4 style="margin-left: 10px;">Enter Product Details</h4>
+  <div class="row" id="parentRow">
+    <div class="col-3" id="image_upload_div">  
+      <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+        <div id="drag_upload_file">
+          <p>Drop file here</p>
+          <p>or</p>
+          <p><input type="button" class="btn btn-primary" value="Select File" onclick="file_explorer();"></p>
+          <input type="file" id="selectfile" multiple>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div id="show_uploaded_images" style="text-align: center; display: none;">
+        <p style="align-self: center;">Selected Images</p>
+        <div id="image_list_div" class="all-slides">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 

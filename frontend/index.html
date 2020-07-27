@@ -23,13 +23,36 @@
         var long;
         var lat;
         var locationString = "";
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
 
         window.addEventListener("load", function () {
             function sendData() {
+                
                 // Create XHR Object
                 var XHROb = new XMLHttpRequest();
                 // Get the filled form data
-                ; var formData = new FormData(formReg);
+                var formData = new FormData(formReg);
+                email = formData.email;
                 formData.append("registered", "1");
                 formData.append("location", locationString);
                 console.log(formData);
@@ -42,7 +65,7 @@
                 console.log(jsonObject);
 
                 // Open a XHR connection
-                XHROb.open("PUT", "http://3.128.23.111:5000/api/v1/user/create");
+                XHROb.open("PUT", "http://3.128.23.111:5000/api/v1/retailer/create");
                 // Set request header to get a json repsonse
                 XHROb.setRequestHeader('Content-type', 'application/json');
                 // Send the request with the JSON data, false means synchronous request, meaning page won't load until the request gets a response
@@ -57,7 +80,9 @@
                 XHROb.onreadystatechange = function(){
                     // this.readyState=4 means, the response has arrived
                     // this.status=200, is the status returned from the APIs ok
-                    if (this.readyState == 4 && this.status == 200) {
+                    if (this.readyState == 4 && this.status == 201) {
+                        // alert("200");
+                        console.log(this.response);
                         // After successful login home_page no? yaaa
                         // Understood this? thoda thoda
                         // LOL this object was to create a user 
@@ -72,10 +97,15 @@
                         // right? haaa
                         // So we need to keep track of which user is currently using. right?yaa understood a bit now
                         // now come to editproduct _category.html I am following 
-                        JSONresponse = JSON.parse(this.responseText);
-                        userEmail = JSONresponse["email"];
-                        document.cookie = "retailer_email=" + email;
-                        window.location.href = "http://localhost/startup/fontend/home_page.html";
+                        // JSONresponse = JSON.parse(this.responseText);
+                        // userEmail = JSONresponse["status"];
+                        setCookie("retailer_email",email,1);
+                        // document.cookie = "retailer_email=" + email;
+                        window.location.href = "http://localhost/startup/frontend/home_page.html";
+                    }else if(this.readyState ==4 && this.status==401){
+                        alert("User already exists");
+                    }else if(this.readyState ==4 && this.status==205){
+                        alert("Invalid GST Number");
                     }
                 };
 
@@ -247,67 +277,77 @@
             <div style="position: relative; display: none;" id="RegisteredForm">
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
+                
+                <form method="post" id="regForm" onsubmit="return false">
+                    <label for="name"><b>Company Name</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
+                    <br>
 
-                <label for="name"><b>Company Name</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
-                <br>
+                    <label for="pn"><b>Phone Number</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pn" required>
+                    <br>
 
-                <label for="pn"><b>Phone Number</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter whatsapp number" name="pn" required>
-                <br>
+                    <label for="category"><b>Category</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="category" name="category" required>
+                    <br>
 
-                <label for="category"><b>Category</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="category" name="category" required>
-                <br>
+                    <label for="email"><b>Email</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter Email" name="email" required>
+                    <br>
 
-                <label for="email"><b>Email</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter Email" name="email" required>
-                <br>
+                    <label for="gst"><b>GST Number</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter valid GST number" name="gst" required>
+                    <br>
 
-                <label for="gst"><b>GST Number</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter valid GST number" name="gst" required>
-                <br>
+                    <label for="State"><b>State</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Enter state" name="state" required>
+                    <br>
 
-                <label for="State"><b>State</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="Enter state" name="state" required>
-                <br>
+                    <label for="city"><b>City</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="city" name="city" required>
+                    <br>
 
-                <label for="city"><b>City</b></label>
-                <br>
-                <input class="login-form" type="text" placeholder="city" name="city" required>
-                <br>
+                    <label for="psw"><b>Password</b></label>
+                    <br>
+                    <input class="login-form" type="password" id="pass1"
+                     placeholder="Password" name="psw"
+                        required>
+                    <br>
+                    <label for="rpsw"><b>Re-Enter The Password</b></label>
+                    <br>
+                    <input id="pass2" class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw"
+                        onchange="CheckPassword()" required>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                        Remember me
+                    </label>
+                    <label for="address1"><b>Address line 1</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Provide valid Address link" name="address1" required>
+                    <br>
+                    <label for="address2"><b>Address line 2</b></label>
+                    <br>
+                    <input class="login-form" type="text" placeholder="Provide valid Address link" name="address2" required>
+                    <br>
 
-                <label for="psw"><b>Password</b></label>
-                <br>
-                <input class="login-form" type="password" id="pass1"
-                    pattern="/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;" placeholder="Password" name="psw"
-                    required>
-                <br>
-                <label for="rpsw"><b>Re-Enter The Password</b></label>
-                <br>
-                <input id="pass2" class="login-form" type="password" placeholder="Re-Enter Password" name="rpsw"
-                    onchange="CheckPassword()" required>
-                <br>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
-                    Remember me
-                </label>
+                    <h5>Share your live shop location</h5>
 
-                <h5>Share your live shop location</h5>
-
-                <button type="button" type="submit" class="button" onclick="getLocation()">here</button>
-                <p id="demo"></p>
-                <br>
-                <button type="submit" type="button" class="button" onSubmit="return checkPassword(this)"><a
-                        href="home_page.html">Signup</a></button>
-                <button type="submit" type="button" class="button">Clear All</a></button>
-                <br>
+                    <button type="button" type="submit" class="button" onclick="getLocation()">here</button>
+                    <p id="demo"></p>
+                    <br>
+                    <button type="submit" type="button" class="button" onSubmit="return checkPassword(this)">
+                        Submit
+                    </button>
+                    <button type="submit" type="button" class="button">Clear All</a></button>
+                    <br>
                 </form>
             </div>
 
@@ -318,7 +358,7 @@
 
                 <h1>Sign Up</h1>
                 <p>Please fill in this form to create an account.</p>
-
+                <form>
                 <label for="name"><b>Company Name</b></label>
                 <br>
                 <input class="login-form" type="text" placeholder="Enter the company's name" name="name" required>
@@ -533,7 +573,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="https://whiteleaf-resources.s3.us-east-2.amazonaws.com/images/2.jpeg" alt="" />
+                        <img class="mx-auto rounded-circle" src="https://whiteleaf-resources.s3.us-east-2.amazonaws.com/images/2.jpeg" style="object-fit: fill;" alt="" />
                         <h4>Vishal Ratnam</h4>
                         <!-- <p class="text-muted">Lead Marketer</p> -->
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>

@@ -13,9 +13,15 @@
 
     <title>Category</title>
     <script>
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
         // Each image has a id, and that is set in the cookie
         function setCategory(id) {
-            document.cookie = "category=" + id;
+            setCookie("category",id,1);
         }
     </script>
 
