@@ -19,7 +19,7 @@
         "type": "text",
         "label": "Brand",
         "id": "brand",
-        "name": "brand",
+        "name": "product_brand",
         "placeholder": "Product Brand",
         "required": "false"
     },
@@ -27,7 +27,7 @@
         "type": "select",
         "label": "Gender",
         "id": "gender",
-        "name": "gender",
+        "name": "product_gender",
         "placeholder": "Gender",
         "required": "true",
         "option": [
@@ -47,17 +47,17 @@
         "label": "Sub-category",
         "id": "sub_category",
         "name": "sub_category",
-        "placeholder": "First Name",
+        "placeholder": "Sub-category",
         "required": "true",
         "style": "",
-        "server-loaded": "true",
-        "server-api": "http://IP:port/route/to/api"
+        "server_loaded": "true",
+        "server_api": "http://3.128.23.111:5000/api/v1/list/subcat"
     },
     {
         "type": "text",
         "label": "Quantity",
         "id": "quantity",
-        "name": "quantity",
+        "name": "product_quantity",
         "placeholder": "Number of Units",
         "required": "true"
     },
@@ -65,7 +65,7 @@
         "type": "number",
         "label": "Size",
         "id": "size",
-        "name": "size",
+        "name": "product_size",
         "placeholder": "Number of Units",
         "required": "true"
     },
@@ -73,7 +73,7 @@
         "type": "select",
         "label": "Unit",
         "id": "unit",
-        "name": "unit",
+        "name": "product_unit",
         "placeholder": "unit",
         "required": "true",
         "option": [
@@ -110,15 +110,15 @@
         "type": "text",
         "label": "Color",
         "id": "color",
-        "name": "color",
-        "placeholder": "color",
+        "name": "product_color",
+        "placeholder": "Color",
         "required": "false"
     },
     {
         "type": "number",
         "label": "Max retail price",
         "id": "mrp",
-        "name": "mrp",
+        "name": "product_mrp",
         "placeholder": "MRP",
         "required": "true"
     },
@@ -126,7 +126,7 @@
         "type": "number",
         "label": "Best Price",
         "id": "bp",
-        "name": "bp",
+        "name": "product_bestprice",
         "placeholder": "Best sellig price",
         "required": "false"
     },
@@ -134,7 +134,7 @@
         "type": "number",
         "label": "Discount",
         "id": "discount",
-        "name": "discount",
+        "name": "product_discount",
         "placeholder": "Discount",
         "required": "false"
     },
@@ -142,7 +142,7 @@
         "type": "text",
         "label": "Description 1",
         "id": "desc1",
-        "name": "desc1",
+        "name": "product_desc1",
         "placeholder": "Description 1",
         "required": "true"
     },
@@ -150,32 +150,8 @@
         "type": "text",
         "label": "Description 2",
         "id": "desc2",
-        "name": "desc2",
+        "name": "product_desc2",
         "placeholder": "Description 2",
-        "required": "true"
-    },
-    {
-        "type": "text",
-        "label": "Description 3",
-        "id": "desc3",
-        "name": "desc3",
-        "placeholder": "Description 3",
-        "required": "false"
-    },
-    {
-        "type": "text",
-        "label": "Description 4",
-        "id": "desc4",
-        "name": "desc4",
-        "placeholder": "Description 4",
-        "required": "false"
-    },
-    {
-        "type": "text",
-        "label": "Description 5",
-        "id": "desc5",
-        "name": "desc5",
-        "placeholder": "Description 5",
         "required": "false"
     }
 ]
